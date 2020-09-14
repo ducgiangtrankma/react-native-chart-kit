@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ViewStyle } from "react-native";
+import { View, ViewStyle,ScrollView } from "react-native";
 import { G, Rect, Svg, Text } from "react-native-svg";
 
 import AbstractChart, {
@@ -196,6 +196,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
 
     return (
       <View style={style}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <Svg height={height} width={width}>
           {this.renderDefs({
             ...config,
@@ -266,6 +267,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
               })}
           </G>
         </Svg>
+        </ScrollView>
       </View>
     );
   }

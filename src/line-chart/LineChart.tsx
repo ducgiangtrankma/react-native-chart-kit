@@ -5,7 +5,8 @@ import {
   StyleSheet,
   TextInput,
   View,
-  ViewStyle
+  ViewStyle,
+  ScrollView
 } from "react-native";
 import {
   Circle,
@@ -837,6 +838,7 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
 
     return (
       <View style={style}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <Svg
           height={height + (paddingBottom as number) + legendOffset}
           width={width - (margin as number) * 2 - (marginRight as number)}
@@ -965,6 +967,7 @@ class LineChart extends AbstractChart<LineChartProps, LineChartState> {
             </G>
           </G>
         </Svg>
+        </ScrollView>
         {withScrollableDot && (
           <ScrollView
             style={StyleSheet.absoluteFill}
